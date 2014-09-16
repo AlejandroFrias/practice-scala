@@ -8,7 +8,7 @@ import sys._
 object CollectionExercise01 {
 
   /**
-   * Taken from: <a href="http://code.google.com/codejam/contest/1460488/dashboard">Problem A. Speaking in Tongues</a>
+   * Taken from: <a href='http://code.google.com/codejam/contest/1460488/dashboard'>Problem A. Speaking in Tongues</a>
    *
    * Problem
    * The aim of this task is to translate a language into a new language called Googlerese.
@@ -18,10 +18,10 @@ object CollectionExercise01 {
    * A letter may be replaced by itself. Spaces are left as-is.
    *
    * For example (and here is a hint!), the translation algorithm includes the following three mappings:
-   * 'a' -> 'y', 'o' -> 'e', and 'z' -> 'q'. This means that "a zoo" will become "y qee".
+   * 'a' -> 'y', 'o' -> 'e', and 'z' -> 'q'. This means that 'a zoo' will become 'y qee'.
    *
    * Sample Input/Output
-   * Input:
+   * Input: 
    * Case 1: ejp mysljylc kd kxveddknmc re jsicpdrysi
    * Case 2: rbcpc ypc rtcsra dkh wyfrepkym veddknkmkrkcd
    * Case 3: de kr kd eoya kw aej tysr re ujdr lkgc jv
@@ -33,7 +33,16 @@ object CollectionExercise01 {
    *
    */
   def googleCodeJamGooglerese(lines: String*): Seq[String] = {
-    error("fix me")
+	lines.map(_.map(googlese2english))
+  }
+  
+  val keyMaps = Map('a' -> 'y', 'b' -> 'h', 'c' -> 'e', 'd' -> 's', 'e' -> 'o', 'f' -> 'c', 'g' -> 'v', 'h' -> 'x', 'i' -> 'd', 'j' -> 'u',
+  'k' -> 'i', 'l' -> 'g', 'm' -> 'l', 'n' -> 'b', 'o' -> 'k', 'p' -> 'r', 'q' -> 'q', 'r' -> 't', 's' -> 'n', 't' -> 'w', 'u' -> 'j', 'v' -> 'p',
+  'w' -> 'f', 'x' -> 'm', 'y' -> 'a', 'z' -> 'q')
+  
+  def googlese2english(c: Char): Char = c match{
+    case c if keyMaps.keySet.exists(_ == c) => keyMaps(c)
+    case c => c
   }
 }
 /*========================================================== */
