@@ -51,7 +51,7 @@ Here's what to do:
 
 - Submit the assignment 
   - [x] Submit your work (by issuing a pull request).
-  - [ ] Review and comment on other teams' code. 
+  - [x] Review and comment on other teams' code. 
 
 ## Lab instructions, hints, and tips
 
